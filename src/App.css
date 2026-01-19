@@ -1,0 +1,233 @@
+/* src/App.css - v6.0 管理員與報表修復版 */
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.5;
+  background-color: #fff7ed;
+  color: #292524;
+}
+
+body { margin: 0; padding: 0; }
+
+#root {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-bottom: 150px;
+  box-sizing: border-box;
+  position: relative; /* 為了讓右上角按鈕定位 */
+}
+
+h1 {
+  color: #c2410c;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin-top: 40px; /* 避開右上角按鈕 */
+}
+
+/* --- 管理員按鈕 (右上角) --- */
+.admin-badge-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  z-index: 200;
+  transition: all 0.2s;
+}
+.admin-badge-btn:hover {
+  background: #ea580c;
+}
+
+/* --- 管理員介面 --- */
+.admin-dashboard {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  border: 2px solid #ea580c;
+}
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #fff7ed;
+  padding-bottom: 10px;
+}
+.admin-order-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #fafaf9;
+}
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color: #431407;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+.order-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee;
+  font-size: 0.95rem;
+}
+.delete-item-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.delete-order-btn {
+  background: #b91c1c;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.report-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.report-btn {
+  flex: 1;
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.report-btn.vendor { background: #0f766e; }
+
+/* --- 輸入區塊 --- */
+.user-input-section {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid #fed7aa;
+  margin-bottom: 25px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.input-label { display: block; font-weight: 700; color: #9a3412; margin-bottom: 10px; }
+.input-field {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 15px;
+  border: 2px solid #fdba74;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #fff7ed;
+  outline: none;
+}
+
+/* --- 分類標籤 --- */
+.category-tabs {
+  display: flex; flex-wrap: wrap; gap: 8px; padding: 15px;
+  margin-bottom: 20px; background: #fff; border-radius: 16px;
+  border: 1px solid #fed7aa; justify-content: center;
+}
+.tab-btn {
+  padding: 8px 16px; border-radius: 20px; border: 1px solid #fed7aa;
+  background: #fff; color: #9a3412; font-weight: 600; cursor: pointer;
+  flex-grow: 1; text-align: center; transition: all 0.2s;
+}
+.tab-btn.active {
+  background: #ea580c; color: white; border-color: #ea580c;
+  transform: translateY(-2px); box-shadow: 0 4px 6px rgba(234, 88, 12, 0.3);
+}
+
+/* --- 菜單列表 --- */
+.menu-list { display: flex; flex-direction: column; gap: 15px; }
+.menu-item {
+  background: white; border-radius: 16px; padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid #ffedd5;
+  display: flex; flex-wrap: wrap; justify-content: space-between;
+  align-items: center; gap: 10px;
+}
+.item-info { flex: 1; min-width: 140px; padding-right: 5px; }
+.item-name { font-weight: 700; color: #431407; font-size: 1.1rem; }
+.item-price { color: #ea580c; font-weight: 600; }
+.item-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+
+/* 下拉選單 */
+.temp-select-inline {
+  padding: 6px 10px; border: 1px solid #fdba74; border-radius: 8px;
+  background-color: #fff; color: #c2410c; font-weight: bold;
+  outline: none; cursor: pointer; height: 36px;
+}
+.qty-control {
+  display: flex; align-items: center; gap: 10px; background: #fff7ed;
+  padding: 4px; border-radius: 50px; border: 1px solid #fed7aa;
+  height: 36px; box-sizing: border-box;
+}
+.qty-btn {
+  width: 28px; height: 28px; border-radius: 50%; border: none;
+  background: #fb923c; color: white; font-size: 1.2rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; padding-bottom: 4px;
+}
+.qty-val { min-width: 20px; text-align: center; font-weight: bold; }
+
+/* --- 底部結帳 --- */
+.sticky-footer {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+  padding: 15px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 100; border-top: 1px solid #fed7aa;
+  max-width: 600px; margin: 0 auto;
+}
+.total-price { font-size: 1.3rem; font-weight: 800; color: #c2410c; }
+.review-btn {
+  background: linear-gradient(135deg, #f97316, #ea580c); color: white;
+  border: none; padding: 12px 30px; border-radius: 30px;
+  font-size: 1.1rem; font-weight: bold; cursor: pointer;
+  box-shadow: 0 4px 10px rgba(249, 115, 22, 0.4);
+}
+
+/* --- Modal --- */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6); display: flex;
+  justify-content: center; align-items: flex-end; z-index: 1000;
+  padding-bottom: 20px;
+}
+.modal-content {
+  background: white; width: 90%; max-width: 500px;
+  border-radius: 20px; padding: 25px;
+  max-height: 80vh; overflow-y: auto;
+  animation: slideUp 0.3s ease-out;
+}
+@keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+.modal-header { display: flex; justify-content: space-between; margin-bottom: 20px; }
+.modal-title { font-size: 1.4rem; font-weight: bold; }
+.close-btn { background: none; border: none; font-size: 1.5rem; color: #999; cursor: pointer; }
+.cart-item { background: #fafaf9; border: 1px solid #eee; border-radius: 12px; padding: 15px; margin-bottom: 10px; }
+.submit-final-btn { width: 100%; background: #ea580c; color: white; border: none; padding: 15px; border-radius: 12px; font-size: 1.2rem; font-weight: bold; margin-top: 20px; cursor: pointer; }

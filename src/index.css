@@ -1,0 +1,16 @@
+/* src/index.css */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  /* 強制設定背景為米黃色，文字為深黑色，不再受深色模式影響 */
+  background-color: #fff7ed; 
+  color: #292524; 
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
