@@ -1,4 +1,4 @@
-// src/data.js - 專門放菜單資料
+// src/data.js - 專門放菜單資料 (2026/01/20 修正版)
 
 export const UPGRADE_OPTIONS = [
   { id: 'u1', name: '薯餅+25元飲品', price: 50 },
@@ -11,19 +11,19 @@ export const UPGRADE_OPTIONS = [
 ]
 
 export const initialMenuData = [
-  // 1. 早午餐拼盤
+  // 1. 早午餐拼盤 (已核對)
   { category: '早午餐拼盤', name: '朝日拼盤 (果醬吐司+雞胸肉)', price: 150 },
   { category: '早午餐拼盤', name: '歐式拼盤 (培根+火腿+德式香腸)', price: 180 },
   { category: '早午餐拼盤', name: '無麩質拼盤 (朝日炙香烤腿+冰心地瓜)', price: 180 },
   { category: '早午餐拼盤', name: '法式拼盤 (蜂蜜法式吐司+雞胸肉)', price: 180 },
 
-  // 2. 套餐組合
+  // 2. 套餐組合 (已核對)
   { category: '套餐組合', name: '中式套餐 (蛋餅+黃金蘿蔔糕+薯餅+25飲品)', price: 100 },
   { category: '套餐組合', name: '美式漢堡套餐 (牛肉培根花生堡+綜合生菜+薯條+25飲品)', price: 150 },
   { category: '套餐組合', name: '貝果套餐 (原味貝果+炒蛋+培根+薯條+25飲品)', price: 120 },
   { category: '套餐組合', name: '元氣套餐 (舒肥雞胸肉+水煮蛋+地瓜+蔬果拿鐵)', price: 180 },
 
-  // 3. 漢堡系列
+  // 3. 漢堡系列 (已核對)
   { category: '漢堡系列', name: '火腿蛋漢堡', price: 55 },
   { category: '漢堡系列', name: '玉米蛋漢堡', price: 55 },
   { category: '漢堡系列', name: '薯餅蛋漢堡', price: 60 },
@@ -43,7 +43,7 @@ export const initialMenuData = [
   { category: '漢堡系列', name: '挽肉愛吃豬(起司醬)漢堡', price: 95 },
   { category: '漢堡系列', name: '挽肉愛吃牛(起司醬)漢堡', price: 100 },
 
-  // 4. 鹹吐司系列
+  // 4. 鹹吐司系列 (已核對)
   { category: '鹹吐司系列', name: '火腿蛋吐司', price: 45 },
   { category: '鹹吐司系列', name: '玉米蛋吐司', price: 45 },
   { category: '鹹吐司系列', name: '薯餅蛋吐司', price: 50 },
@@ -63,27 +63,27 @@ export const initialMenuData = [
   { category: '鹹吐司系列', name: '挽肉愛吃豬(起司醬)吐司', price: 85 },
   { category: '鹹吐司系列', name: '挽肉愛吃牛(起司醬)吐司', price: 90 },
 
-  // 5. 貝果/可頌系列
-  { category: '貝果/可頌系列', name: '火腿蛋 (貝果/可頌)', price: 65 },
-  { category: '貝果/可頌系列', name: '玉米蛋 (貝果/可頌)', price: 65 },
-  { category: '貝果/可頌系列', name: '薯餅蛋 (貝果/可頌)', price: 70 },
-  { category: '貝果/可頌系列', name: '培根蛋 (貝果/可頌)', price: 70 },
-  { category: '貝果/可頌系列', name: '鮪魚蛋 (貝果/可頌)', price: 75 },
-  { category: '貝果/可頌系列', name: '牽絲蛋起司 (貝果/可頌)', price: 70 },
-  { category: '貝果/可頌系列', name: '起司菇菇蛋 (貝果/可頌)', price: 70 },
-  { category: '貝果/可頌系列', name: '健身愛雞胸 (貝果/可頌)', price: 80 },
-  { category: '貝果/可頌系列', name: '厚遇里肌 (貝果/可頌)', price: 85 },
-  { category: '貝果/可頌系列', name: '德味狂想 (貝果/可頌)', price: 90 },
-  { category: '貝果/可頌系列', name: '北海金鱈 (貝果/可頌)', price: 95 },
-  { category: '貝果/可頌系列', name: '極上豚勝 (貝果/可頌)', price: 100 },
-  { category: '貝果/可頌系列', name: '原味卡拉雞腿 (貝果/可頌)', price: 100 },
-  { category: '貝果/可頌系列', name: '辣味卡拉雞腿 (貝果/可頌)', price: 100 },
-  { category: '貝果/可頌系列', name: '雙魚物語 (貝果/可頌)', price: 105 },
-  { category: '貝果/可頌系列', name: '朝日炙香嫩腿 (貝果/可頌)', price: 105 },
-  { category: '貝果/可頌系列', name: '挽肉愛吃豬 (貝果/可頌)', price: 105 },
-  { category: '貝果/可頌系列', name: '挽肉愛吃牛 (貝果/可頌)', price: 110 },
+  // 5. 貝果/可頌系列 (已拆分為獨立品項並核對價格)
+  { category: '貝果/可頌系列', name: '火腿蛋貝果', price: 65 }, { category: '貝果/可頌系列', name: '火腿蛋可頌', price: 65 },
+  { category: '貝果/可頌系列', name: '玉米蛋貝果', price: 65 }, { category: '貝果/可頌系列', name: '玉米蛋可頌', price: 65 },
+  { category: '貝果/可頌系列', name: '薯餅蛋貝果', price: 70 }, { category: '貝果/可頌系列', name: '薯餅蛋可頌', price: 70 },
+  { category: '貝果/可頌系列', name: '培根蛋貝果', price: 70 }, { category: '貝果/可頌系列', name: '培根蛋可頌', price: 70 },
+  { category: '貝果/可頌系列', name: '鮪魚蛋貝果', price: 75 }, { category: '貝果/可頌系列', name: '鮪魚蛋可頌', price: 75 },
+  { category: '貝果/可頌系列', name: '牽絲蛋起司貝果', price: 70 }, { category: '貝果/可頌系列', name: '牽絲蛋起司可頌', price: 70 },
+  { category: '貝果/可頌系列', name: '起司菇菇蛋貝果', price: 70 }, { category: '貝果/可頌系列', name: '起司菇菇蛋可頌', price: 70 },
+  { category: '貝果/可頌系列', name: '健身愛雞胸貝果', price: 80 }, { category: '貝果/可頌系列', name: '健身愛雞胸可頌', price: 80 },
+  { category: '貝果/可頌系列', name: '厚遇里肌貝果', price: 85 }, { category: '貝果/可頌系列', name: '厚遇里肌可頌', price: 85 },
+  { category: '貝果/可頌系列', name: '德味狂想貝果', price: 90 }, { category: '貝果/可頌系列', name: '德味狂想可頌', price: 90 },
+  { category: '貝果/可頌系列', name: '北海金鱈貝果', price: 95 }, { category: '貝果/可頌系列', name: '北海金鱈可頌', price: 95 },
+  { category: '貝果/可頌系列', name: '極上豚勝貝果', price: 100 }, { category: '貝果/可頌系列', name: '極上豚勝可頌', price: 100 },
+  { category: '貝果/可頌系列', name: '原味卡拉雞腿貝果', price: 100 }, { category: '貝果/可頌系列', name: '原味卡拉雞腿可頌', price: 100 },
+  { category: '貝果/可頌系列', name: '辣味卡拉雞腿貝果', price: 100 }, { category: '貝果/可頌系列', name: '辣味卡拉雞腿可頌', price: 100 },
+  { category: '貝果/可頌系列', name: '雙魚物語貝果', price: 105 }, { category: '貝果/可頌系列', name: '雙魚物語可頌', price: 105 },
+  { category: '貝果/可頌系列', name: '朝日炙香嫩腿貝果', price: 105 }, { category: '貝果/可頌系列', name: '朝日炙香嫩腿可頌', price: 105 },
+  { category: '貝果/可頌系列', name: '挽肉愛吃豬貝果', price: 105 }, { category: '貝果/可頌系列', name: '挽肉愛吃豬可頌', price: 105 },
+  { category: '貝果/可頌系列', name: '挽肉愛吃牛貝果', price: 110 }, { category: '貝果/可頌系列', name: '挽肉愛吃牛可頌', price: 110 },
 
-  // 6. 總匯吐司
+  // 6. 總匯吐司 (已核對)
   { category: '總匯吐司', name: '玉米蛋總匯', price: 70 },
   { category: '總匯吐司', name: '薯餅總匯', price: 75 },
   { category: '總匯吐司', name: '培根總匯', price: 75 },
@@ -102,7 +102,7 @@ export const initialMenuData = [
   { category: '總匯吐司', name: '挽肉愛吃豬(起司醬)總匯', price: 115 },
   { category: '總匯吐司', name: '挽肉愛吃牛(起司醬)總匯', price: 120 },
 
-  // 7. 中式系列
+  // 7. 中式系列 (已核對，補齊抓餅口味)
   { category: '中式系列', name: '原味酥皮蛋餅', price: 35 },
   { category: '中式系列', name: '火腿/玉米蛋餅', price: 45 },
   { category: '中式系列', name: '薯餅/培根蛋餅', price: 50 },
@@ -120,19 +120,28 @@ export const initialMenuData = [
   { category: '中式系列', name: '朝日炙香嫩腿蛋餅', price: 85 },
   { category: '中式系列', name: '挽肉愛吃豬蛋餅', price: 85 },
   { category: '中式系列', name: '挽肉愛吃牛蛋餅', price: 90 },
+  // 抓餅系列 (補齊)
   { category: '中式系列', name: '原味蔥抓餅', price: 35 },
   { category: '中式系列', name: '加蛋蔥抓餅', price: 45 },
+  { category: '中式系列', name: '九層塔抓餅', price: 45 },
+  { category: '中式系列', name: '起司抓餅', price: 50 },
+  { category: '中式系列', name: '泡菜抓餅', price: 55 },
+  { category: '中式系列', name: '鮪魚抓餅', price: 60 },
+  { category: '中式系列', name: '豬排抓餅', price: 65 },
+  { category: '中式系列', name: '原味卡拉雞抓餅', price: 75 },
+  { category: '中式系列', name: '辣味卡拉雞抓餅', price: 75 },
+  // 蘿蔔糕
   { category: '中式系列', name: '原味蘿蔔糕', price: 35 },
   { category: '中式系列', name: '黃金蘿蔔糕 (加蛋)', price: 45 },
 
-  // 8. 鐵板麵系列
+  // 8. 鐵板麵系列 (已核對)
   { category: '鐵板麵系列', name: '黑胡椒鐵板麵', price: 50 },
   { category: '鐵板麵系列', name: '蘑菇鐵板麵', price: 50 },
   { category: '鐵板麵系列', name: '宮保雞丁鐵板麵', price: 60 },
   { category: '鐵板麵系列', name: '義大利肉醬鐵板麵', price: 60 },
   { category: '鐵板麵系列', name: '義大利青醬鐵板麵', price: 60 },
   
-  // 9. 找飯找麵
+  // 9. 找飯找麵 (已核對)
   { category: '找飯找麵', name: '起司炒Q拉麵(微辣)', price: 100 },
   { category: '找飯找麵', name: '辣味炒Q拉麵(微辣)', price: 100 },
   { category: '找飯找麵', name: '海鮮炒烏龍麵', price: 100 },
@@ -142,37 +151,39 @@ export const initialMenuData = [
   { category: '找飯找麵', name: '照燒雞腿飯', price: 150 },
   { category: '找飯找麵', name: '牛肝菌菇義大利麵/燉飯', price: 150 },
 
-  // 10. 果醬系列
-  { category: '果醬系列', name: '巧克力吐司', price: 30 }, { category: '果醬系列', name: '巧克力厚片', price: 50 },
-  { category: '果醬系列', name: '草莓吐司', price: 30 }, { category: '果醬系列', name: '草莓厚片', price: 50 },
-  { category: '果醬系列', name: '奶油吐司', price: 30 }, { category: '果醬系列', name: '奶油厚片', price: 50 },
-  { category: '果醬系列', name: '花生吐司', price: 30 }, { category: '果醬系列', name: '花生厚片', price: 50 },
-  { category: '果醬系列', name: '法式焦糖奶油吐司', price: 30 },
-  { category: '果醬系列', name: '流沙奶酥吐司', price: 30 }, { category: '果醬系列', name: '流沙奶酥厚片', price: 50 },
-  { category: '果醬系列', name: '自製原味奶酥吐司', price: 40 }, { category: '果醬系列', name: '自製原味奶酥厚片', price: 60 },
-  { category: '果醬系列', name: '自製咖啡奶酥吐司', price: 40 }, { category: '果醬系列', name: '自製咖啡奶酥厚片', price: 60 },
+  // 10. 果醬系列 (已核對，修正厚片價格為+10元，並補上法式焦糖奶油厚片)
+  { category: '果醬系列', name: '巧克力吐司', price: 30 }, { category: '果醬系列', name: '巧克力厚片', price: 40 },
+  { category: '果醬系列', name: '草莓吐司', price: 30 }, { category: '果醬系列', name: '草莓厚片', price: 40 },
+  { category: '果醬系列', name: '奶油吐司', price: 30 }, { category: '果醬系列', name: '奶油厚片', price: 40 },
+  { category: '果醬系列', name: '花生吐司', price: 30 }, { category: '果醬系列', name: '花生厚片', price: 40 },
+  { category: '果醬系列', name: '法式焦糖奶油吐司', price: 30 }, { category: '果醬系列', name: '法式焦糖奶油厚片', price: 40 },
+  { category: '果醬系列', name: '流沙奶酥吐司', price: 30 }, { category: '果醬系列', name: '流沙奶酥厚片', price: 40 },
+  { category: '果醬系列', name: '自製原味奶酥吐司', price: 40 }, { category: '果醬系列', name: '自製原味奶酥厚片', price: 50 },
+  { category: '果醬系列', name: '自製咖啡奶酥吐司', price: 40 }, { category: '果醬系列', name: '自製咖啡奶酥厚片', price: 50 },
 
-  // 11. 飲料
+  // 11. 飲料 (已核對，補上冬瓜茶系列)
   { category: '飲料', name: '紅茶 XL', price: 30 }, { category: '飲料', name: '紅茶 L', price: 25 }, { category: '飲料', name: '紅茶 M', price: 20 },
   { category: '飲料', name: '綠茶 XL', price: 30 }, { category: '飲料', name: '綠茶 L', price: 25 }, { category: '飲料', name: '綠茶 M', price: 20 },
   { category: '飲料', name: '奶茶 XL', price: 35 }, { category: '飲料', name: '奶茶 L', price: 30 }, { category: '飲料', name: '奶茶 M', price: 25 },
   { category: '飲料', name: '奶綠 XL', price: 35 }, { category: '飲料', name: '奶綠 L', price: 30 }, { category: '飲料', name: '奶綠 M', price: 25 },
   { category: '飲料', name: '豆漿 XL', price: 35 }, { category: '飲料', name: '豆漿 L', price: 30 }, { category: '飲料', name: '豆漿 M', price: 25 },
+  { category: '飲料', name: '冬瓜茶 XL', price: 30 }, { category: '飲料', name: '冬瓜茶 L', price: 25 }, { category: '飲料', name: '冬瓜茶 M', price: 20 },
   { category: '飲料', name: '紐西蘭鮮奶茶 XL', price: 60 }, { category: '飲料', name: '紐西蘭鮮奶茶 L', price: 55 }, { category: '飲料', name: '紐西蘭鮮奶茶 M', price: 50 },
   { category: '飲料', name: '紐西蘭鮮奶綠 XL', price: 60 }, { category: '飲料', name: '紐西蘭鮮奶綠 L', price: 55 }, { category: '飲料', name: '紐西蘭鮮奶綠 M', price: 50 },
+  { category: '飲料', name: '鮮奶冬瓜 XL', price: 60 }, { category: '飲料', name: '鮮奶冬瓜 L', price: 55 }, { category: '飲料', name: '鮮奶冬瓜 M', price: 50 },
   { category: '飲料', name: '可可', price: 45 },
   { category: '飲料', name: '美式咖啡', price: 45 },
   { category: '飲料', name: '紐西蘭鮮拿鐵', price: 65 },
   { category: '飲料', name: '綠蔬果拿鐵', price: 80 },
   { category: '飲料', name: '紅蔬果拿鐵', price: 80 },
 
-  // 12. 小點心/沙拉/湯品
+  // 12. 小點心/沙拉/湯品 (已核對，移除重複的黃金蘿蔔糕)
   { category: '小點心', name: '荷包蛋', price: 15 },
   { category: '小點心', name: '薯餅', price: 25 },
   { category: '小點心', name: '細薯條', price: 30 },
   { category: '小點心', name: '德式香腸', price: 35 },
   { category: '小點心', name: '脆薯', price: 40 },
-  { category: '小點心', name: '黃金蘿蔔糕', price: 40 },
+  // { category: '小點心', name: '黃金蘿蔔糕', price: 40 }, // 已在中式系列有更精確的品項，故移除
   { category: '小點心', name: '雞塊(5個)', price: 40 },
   { category: '小點心', name: '地瓜球(10個)', price: 40 },
   { category: '小點心', name: '檸檬雞柳條(3個)', price: 45 },

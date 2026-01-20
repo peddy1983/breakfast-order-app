@@ -1,0 +1,67 @@
+📁 專案開發說明文件 (Project Documentation)
+1. 專案概述
+專案名稱： 朝日暖陽 線上點餐系統 (Morning Sun Breakfast Order)
+
+用途： 提供一次性或短期活動（約 30-50 人）的早餐線上點餐、統計與報表列印。
+
+技術架構：
+
+前端框架： React (Vite)
+
+資料庫： Supabase (PostgreSQL)
+
+部署平台： Vercel (前端) + Supabase (後端)
+
+樣式： 純 CSS (App.css)
+
+2. 檔案結構
+本專案採用「資料與邏輯分離」的架構，方便維護菜單。
+
+src/data.js：[資料層] 存放所有菜單品項 (initialMenuData) 與升級選項 (UPGRADE_OPTIONS)。若要修改價格或品項，僅需修改此檔案。
+
+src/App.jsx：[邏輯層] 包含購物車邏輯、資料庫串接、拆單演算法、管理員後台與報表列印功能。
+
+src/App.css：[樣式層] 負責網頁的視覺設計與 RWD 響應式排版。
+
+src/supabaseClient.js：負責與 Supabase 資料庫連線的設定檔。
+
+3. 資料庫設定 (Supabase)
+系統依賴兩個核心表格，必須在 SQL Editor 中建立：
+
+A. 表格結構
+menu_items (菜單表)
+
+用途：儲存 data.js 寫入的菜單資料。
+
+orders (訂單表)
+
+id: bigint (Primary Key)
+
+created_at: timestamp (自動生成)
+
+customer_name: text (客戶暱稱)
+
+order_details: jsonb (儲存訂單內容陣列)
+
+total_price: numeric (總金額)
+
+B. 安全性策略 (RLS)
+重要設定： 必須對 orders 與 menu_items 開啟 RLS (Row Level Security) 並設定 Policy 為 "Enable access for all users" (開放所有讀寫權限)，否則無法送出訂單。
+
+4. 關鍵核心邏輯
+本系統最特殊的功能在於**「智慧拆單報表」 (printVendorReport)**：
+
+套餐組合 (Set Meals)： 視為綁定商品（如：中式套餐），主食不拆分，但會將括號內的飲料（如：紅茶）提取出來合併至飲料區。
+
+升級套餐 (Upgrade)： 自動拆解為三部分：主餐（歸主餐區）、副餐（歸炸物區）、飲料（歸飲料區）。
+
+拼盤 (Platter)： 飲料會特別標註 (拼盤)，以便吧台區分容器。
+
+飲料合併： 所有來源（單點、套餐附贈、升級）的相同飲料（如：紅茶 L 冰）會自動加總數量。
+
+5. 維護與重置指南
+活動前準備： 登入 Supabase 後台確認資料庫是否為 Active（若閒置超過 7 天會變 Paused，需點擊 Restore 喚醒）。
+
+修改菜單： 修改 src/data.js -> 執行 git push -> 登入網頁管理員 -> 點擊「⚠️ 重置資料庫菜單」。
+
+清除舊訂單： 可在 Supabase SQL Editor 執行 DELETE FROM orders; 來清空測試資料。
